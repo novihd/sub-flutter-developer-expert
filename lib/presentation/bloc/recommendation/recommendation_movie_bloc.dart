@@ -14,7 +14,7 @@ class RecommendationMovieBloc
       : super(RecommendationMovieEmpty()) {
     on<FetchRecommendationMovie>(
       (event, emit) async {
-        final int id = int.parse(event.movieId.toString());
+        final int id = int.parse(event.idMovie.toString());
         emit(RecommendationMovieLoading());
         final result = await _getMovieRecommendations.execute(id);
         result.fold((l) => emit(RecommendationMovieError(l.message)),

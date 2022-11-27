@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_typing_uninitialized_variables
-
 part of 'recommendation_movie_bloc.dart';
 
 abstract class RecommendationMovieEvent extends Equatable {
@@ -10,10 +8,10 @@ abstract class RecommendationMovieEvent extends Equatable {
 }
 
 class FetchRecommendationMovie extends RecommendationMovieEvent {
-  final movieId;
+  final idMovie;
 
-  const FetchRecommendationMovie(this.movieId);
+  const FetchRecommendationMovie(this.idMovie);
 
   @override
-  List<Object?> get props => [movieId];
+  List<Object?> get props => [idMovie];
 }
